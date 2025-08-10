@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy – ZenSync</title>
+  <meta name="description" content="ZenSync Privacy Policy" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="ZenSync home">
+        <img src="assets/app-icon.png" alt="ZenSync App Icon" class="brand-icon" />
+        <div class="brand-text">
+          <span class="brand-title">ZenSync</span>
+          <span class="brand-sub">Wellness: Mind & Body Sync</span>
+        </div>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+      <nav id="primary-nav" class="nav" role="navigation">
+        <a href="index.html#features">Features</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="index.html#download" class="btn btn-primary btn-sm">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Privacy Policy</h1>
+        <p><em>Effective: August 10, 2025</em></p>
+
+        <p>ZenSync ("we", "us", or "our") is designed with privacy by default. This policy explains what information the app handles, how it is used, and the choices you have. If you have questions, contact us at <a href="mailto:support@zensync.life">support@zensync.life</a>.</p>
+
+        <h3>What data the app can access</h3>
+        <ul class="list">
+          <li><strong>Data you enter</strong>: mood check-ins, sleep entries, stress events, notes, and personal goals that you choose to record.</li>
+          <li><strong>Apple Health data (optional)</strong>: with your explicit permission, the app can read selected HealthKit data such as steps, sleep, and other activity metrics. You control which categories are shared. The app does not read any Health data without your consent.</li>
+          <li><strong>Support communications</strong>: if you email us, we receive your email address and the message content solely to respond to your request.</li>
+        </ul>
+
+        <h3>How your data is used</h3>
+        <ul class="list">
+          <li><strong>Core features</strong>: to show your entries, trends, analytics, and AI insights.</li>
+          <li><strong>On-device intelligence</strong>: analytics and AI insights are computed on your device using your data. Health data is not transmitted to our servers.</li>
+          <li><strong>Support</strong>: to answer your questions if you contact us.</li>
+        </ul>
+
+        <h3>Where your data is stored</h3>
+        <ul class="list">
+          <li><strong>On your device</strong>: wellness entries and Health data accessed by the app are stored locally on your device.</li>
+          <li><strong>Backups</strong>: if you use system backups (e.g., iCloud Backup), your device may include app data in encrypted backups managed by Apple per your system settings. We do not have access to your iCloud Backup.</li>
+        </ul>
+
+        <h3>Sharing and selling</h3>
+        <ul class="list">
+          <li>We <strong>do not sell</strong> your data.</li>
+          <li>We do <strong>not</strong> use third‑party advertising or tracking SDKs.</li>
+          <li>Health data never leaves your device unless you choose to export or share it.</li>
+        </ul>
+
+        <h3>Health permissions</h3>
+        <p>The app requests HealthKit permissions only for the categories you select. You can change or revoke permissions anytime in iOS Settings → Health → Data Access & Devices. The app reads data you allow. It does not write Health data unless you explicitly enable it for specific categories.</p>
+
+        <h3>Analytics and diagnostics</h3>
+        <ul class="list">
+          <li><strong>In‑app analytics</strong> shown to you are computed locally. We do not collect behavioral analytics about how you use the app.</li>
+          <li><strong>Crash reports</strong>: if you opt in to share diagnostics with developers via Apple, we may receive anonymized crash reports from Apple to improve stability. These reports do not include your Health data.</li>
+        </ul>
+
+        <h3>Data export and deletion</h3>
+        <ul class="list">
+          <li><strong>Export</strong>: you can export your data from the app at any time (see Settings → Privacy or Export).</li>
+          <li><strong>Delete</strong>: you can delete your data from within the app. Deleting data in the app does not remove copies that may exist in your device backups.</li>
+        </ul>
+
+        <h3>Your rights</h3>
+        <p>Depending on your location, you may have rights to access, correct, delete, or restrict the processing of your personal information. To exercise these rights, use the in‑app privacy tools or email <a href="mailto:support@zensync.life">support@zensync.life</a>. We will not discriminate against you for exercising your privacy rights.</p>
+
+        <h3>Children’s privacy</h3>
+        <p>The app is not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us information, contact us so we can delete it.</p>
+
+        <h3>Changes to this policy</h3>
+        <p>We may update this policy to reflect improvements or legal requirements. We will update the date above and publish changes on this page. Material changes will be highlighted in‑app where appropriate.</p>
+
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:support@zensync.life">support@zensync.life</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> ZenSync</span>
+      <nav class="footer-nav">
+        <a href="privacy.html" aria-current="page">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('primary-nav');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
+    });
+  </script>
+</body>
+</html> 
