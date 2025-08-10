@@ -76,13 +76,6 @@ img { max-width: 100%; display: block; }
 .feature-icon { font-size: 22px; }
 .glass { backdrop-filter: blur(6px) saturate(1.1); }
 
-/* Carousel */
-.carousel { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; }
-.car-btn { width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--line); background: color-mix(in oklab, var(--panel) 80%, transparent); color: var(--text); cursor: pointer; font-size: 20px; display: grid; place-items: center; }
-.car-track { display: flex; gap: 16px; overflow: hidden; scroll-behavior: smooth; transition: transform .25s ease; }
-.car-slide { flex: 0 0 auto; width: min(280px, 80vw); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--panel); box-shadow: var(--shadow); }
-.car-slide img { width: 100%; height: auto; display: block; }
-
 /* Lists & privacy */
 .list { margin: 0; padding-left: 18px; color: var(--muted); }
 .privacy { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; }
