@@ -5,115 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZenSync – Wellness: Mind & Body Sync</title>
   <meta name="description" content="ZenSync helps you track mood, sleep, stress, and activity, with AI insights to improve your wellbeing." />
+  <meta name="theme-color" content="#0ea5e9" />
   <meta property="og:title" content="ZenSync – Wellness: Mind & Body Sync" />
   <meta property="og:description" content="Track mood, sleep, stress, and activity. Get AI insights to improve your wellbeing." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/app-icon.png" />
   <link rel="icon" href="assets/app-icon.png" />
   <link rel="apple-touch-icon" href="assets/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <div class="brand">
+      <a class="brand" href="#" aria-label="ZenSync home">
         <img src="assets/app-icon.png" alt="ZenSync App Icon" class="brand-icon" />
         <div class="brand-text">
-          <h1>ZenSync</h1>
-          <p>Wellness: Mind & Body Sync</p>
+          <span class="brand-title">ZenSync</span>
+          <span class="brand-sub">Wellness: Mind & Body Sync</span>
         </div>
-      </div>
-      <nav class="nav">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+      <nav id="primary-nav" class="nav" role="navigation">
         <a href="#features">Features</a>
-        <a href="#screens">Screens</a>
+        <a href="#analytics">Analytics</a>
         <a href="#privacy">Privacy</a>
+        <a href="#contact">Contact</a>
         <a href="#download" class="btn btn-primary btn-sm">Download</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h2>Your daily companion for balanced wellbeing</h2>
+          <div class="badge">New • iPhone & iPad</div>
+          <h1>Your daily companion for balanced wellbeing</h1>
           <p>Track your mood and sleep, log stress events, and connect Apple&nbsp;Health data for steps, heart rate, and activity. ZenSync brings it all together with clear analytics and AI-powered insights.</p>
           <div class="cta" id="download">
             <a class="btn btn-primary" href="#" aria-disabled="true">App Store (coming soon)</a>
             <a class="btn btn-ghost" href="mailto:support@zensync.life?subject=TestFlight%20Access">Request TestFlight</a>
           </div>
+          <ul class="hero-points">
+            <li>Private by design – on-device storage</li>
+            <li>Smart goals tailored to your habits</li>
+            <li>Inclusive date-range analytics</li>
+          </ul>
         </div>
-        <div class="hero-art">
-          <div class="art-card">
-            <div class="art-row">
-              <div class="stat">
-                <span class="stat-label">Mood</span>
-                <span class="stat-value">7.8/10</span>
-              </div>
-              <div class="stat">
-                <span class="stat-label">Sleep</span>
-                <span class="stat-value">7.2 h</span>
-              </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="phone-mock">
+            <div class="status">
+              <div class="stat"><span>Mood</span><strong>7.8/10</strong></div>
+              <div class="stat"><span>Sleep</span><strong>7.2 h</strong></div>
+              <div class="stat"><span>Steps</span><strong>8,945</strong></div>
             </div>
-            <div class="art-row">
-              <div class="stat">
-                <span class="stat-label">Steps</span>
-                <span class="stat-value">8,945</span>
-              </div>
-              <div class="stat">
-                <span class="stat-label">Stress</span>
-                <span class="stat-value">Low</span>
-              </div>
-            </div>
-            <div class="art-foot">AI Insights: “Active day boosted sleep quality.”</div>
+            <div class="insight">AI Insight: Active day boosted sleep quality</div>
           </div>
         </div>
       </div>
+      <div class="hero-wave" aria-hidden="true"></div>
     </section>
 
     <section id="features" class="section">
       <div class="container">
-        <h3 class="section-title">Features</h3>
+        <h2 class="section-title">Everything you need to build healthy habits</h2>
         <div class="grid features-grid">
-          <div class="feature">
+          <article class="feature">
             <div class="feature-icon">😊</div>
-            <h4>Mood Tracking</h4>
-            <p>Check in four times a day to map your emotional rhythm.</p>
-          </div>
-          <div class="feature">
+            <h3>Mood Tracking</h3>
+            <p>Check in up to four times a day to map your emotional rhythm and identify patterns.</p>
+          </article>
+          <article class="feature">
             <div class="feature-icon">😴</div>
-            <h4>Sleep Quality</h4>
-            <p>Log hours, time-to-sleep, and overall quality; merge with Watch sleep.</p>
-          </div>
-          <div class="feature">
+            <h3>Sleep Quality</h3>
+            <p>Log hours, time-to-sleep, and overall quality; merge with Apple&nbsp;Watch sleep data.</p>
+          </article>
+          <article class="feature">
             <div class="feature-icon">📊</div>
-            <h4>Analytics</h4>
-            <p>See trends across mood, sleep, steps, and calories by date range.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">🤖</div>
-            <h4>AI Insights</h4>
-            <p>Personalized tips from your recent data patterns and goals.</p>
-          </div>
-          <div class="feature">
+            <h3>Trends & Insights</h3>
+            <p>Explore date-range analytics across mood, sleep, steps, and calories with AI highlights.</p>
+          </article>
+          <article class="feature">
             <div class="feature-icon">🎯</div>
-            <h4>Daily Goals</h4>
-            <p>Smart, personalized goals that adapt to your habits.</p>
-          </div>
-          <div class="feature">
+            <h3>Personalized Goals</h3>
+            <p>Daily, adaptive goals based on your recent behavior and preferences.</p>
+          </article>
+          <article class="feature">
             <div class="feature-icon">🧠</div>
-            <h4>Stress Manager</h4>
-            <p>Track upcoming events and get practical, health-first suggestions.</p>
-          </div>
+            <h3>Stress Manager</h3>
+            <p>Track upcoming events and receive practical, health-first suggestions.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Privacy First</h3>
+            <p>Your data stays on your device, with clear controls to export or delete.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="screens" class="section section-alt">
-      <div class="container">
-        <h3 class="section-title">Designed for iPhone and iPad</h3>
-        <p class="section-sub">Adaptive layouts with full-width iPad experiences and intuitive navigation on iPhone.</p>
-        <div class="screens">
+    <section id="analytics" class="section section-alt">
+      <div class="container analytics">
+        <div class="analytics-copy">
+          <h2 class="section-title">Designed for iPhone and iPad</h2>
+          <p>Adaptive layouts with full‑width iPad experiences and intuitive navigation on iPhone. Every chart respects your selected date range, and sleep charts merge manual and Apple&nbsp;Watch data.</p>
+          <ul class="list">
+            <li>Inclusive date-range handling</li>
+            <li>Weekly and daily views</li>
+            <li>Clear visual states for missing data</li>
+          </ul>
+        </div>
+        <div class="analytics-art" aria-hidden="true">
           <div class="screen-card">Dashboard</div>
           <div class="screen-card">Goals</div>
           <div class="screen-card">Analytics</div>
@@ -124,41 +134,54 @@
 
     <section id="privacy" class="section">
       <div class="container">
-        <h3 class="section-title">Privacy First</h3>
+        <h2 class="section-title">Privacy First</h2>
         <div class="privacy">
-          <p>Your wellness data is stored on-device. Health data is only accessed with your permission. You can clear or export your data anytime from the app.</p>
-          <ul>
-            <li>On-device storage for wellness entries</li>
+          <p>Your wellness data is stored on‑device. Health data is only accessed with your permission. You can clear or export your data anytime from the app.</p>
+          <ul class="list">
+            <li>On‑device storage for wellness entries</li>
             <li>Granular Health permissions</li>
             <li>Data export and full data deletion</li>
           </ul>
-          <p>Questions? Email <a href="mailto:support@zensync.life">support@zensync.life</a>.</p>
         </div>
       </div>
     </section>
 
-    <section class="section cta-final">
+    <section class="section cta-final" id="contact">
       <div class="container">
-        <h3 class="section-title">Get ZenSync</h3>
+        <h2 class="section-title">Get ZenSync</h2>
         <p>Join early testers and help shape the future of student wellness.</p>
         <div class="cta">
           <a class="btn btn-primary" href="#" aria-disabled="true">App Store (coming soon)</a>
           <a class="btn btn-ghost" href="mailto:support@zensync.life?subject=TestFlight%20Access">Request TestFlight</a>
         </div>
+        <p class="contact">Questions? Email <a href="mailto:support@zensync.life">support@zensync.life</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <span>© <span id="year"></span> ZenSync</span>
-      <span><a href="mailto:support@zensync.life">Contact</a></span>
-      <span><a href="https://github.com/srijaca1/applehealthapp" target="_blank" rel="noopener">GitHub</a></span>
+      <nav class="footer-nav">
+        <a href="https://github.com/srijaca1/ZENSYNC.LIFE" target="_blank" rel="noopener">GitHub</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </footer>
 
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile nav toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('primary-nav');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
+    });
   </script>
 </body>
 </html> 
