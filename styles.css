@@ -100,10 +100,41 @@ img { max-width: 100%; display: block; }
 
 .grid { display: grid; gap: 16px; }
 .features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.feature { background: color-mix(in oklab, var(--panel) 86%, transparent); border: 1px solid var(--line); border-radius: 16px; padding: 18px; box-shadow: 0 8px 20px rgba(0,0,0,.25); transition: transform .15s ease, background .2s ease; }
+.feature { background: color-mix(in oklab, var(--panel) 86%, transparent); border: 1px solid var(--line); border-radius: 16px; padding: 18px; box-shadow: 0 8px 20px rgba(0,0,0,.25); transition: transform .15s ease, background .2s ease; position: relative; overflow: hidden; }
 .feature:hover { transform: translateY(-2px); background: color-mix(in oklab, var(--panel) 95%, transparent); }
-.feature-icon { font-size: 22px; }
+.feature-icon { font-size: 28px; }
 .glass { backdrop-filter: blur(6px) saturate(1.1); }
+
+/* Carousel - removed */
+.carousel, .car-btn, .car-track, .car-slide { display: none !important; }
+
+/* Colorful variants for each feature card */
+.features-grid .feature:nth-child(1) { /* Mood Tracking */
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  border: none; color: #fff; box-shadow: 0 10px 24px rgba(164, 120, 255, .35);
+}
+.features-grid .feature:nth-child(2) { /* Sleep Quality */
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  border: none; color: #fff; box-shadow: 0 10px 24px rgba(6, 182, 212, .35);
+}
+.features-grid .feature:nth-child(3) { /* Trends & Insights */
+  background: linear-gradient(135deg, #f43f5e, #8b5cf6);
+  border: none; color: #fff; box-shadow: 0 10px 24px rgba(244, 63, 94, .30);
+}
+.features-grid .feature:nth-child(4) { /* Personalized Goals */
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border: none; color: #fff; box-shadow: 0 10px 24px rgba(239, 68, 68, .30);
+}
+.features-grid .feature:nth-child(5) { /* Stress Manager */
+  background: linear-gradient(135deg, #10b981, #22c55e);
+  border: none; color: #fff; box-shadow: 0 10px 24px rgba(16, 185, 129, .30);
+}
+.features-grid .feature:nth-child(6) { /* Privacy First */
+  background: linear-gradient(135deg, #64748b, #0ea5e9);
+  border: none; color: #fff; box-shadow: 0 10px 24px rgba(14, 165, 233, .30);
+}
+.features-grid .feature:nth-child(n) p { color: rgba(255,255,255,.92); }
+.features-grid .feature:nth-child(n) .feature-icon { text-shadow: 0 2px 6px rgba(0,0,0,.25); }
 
 /* Lists & privacy */
 .list { margin: 0; padding-left: 18px; color: var(--muted); }
