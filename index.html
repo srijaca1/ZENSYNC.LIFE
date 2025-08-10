@@ -21,7 +21,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="#" aria-label="ZenSync home">
+      <a class="brand" href="#top" aria-label="ZenSync home">
         <img src="assets/app-icon.png" alt="ZenSync App Icon" class="brand-icon" />
         <div class="brand-text">
           <span class="brand-title">ZenSync</span>
@@ -35,30 +35,30 @@
       </button>
       <nav id="primary-nav" class="nav" role="navigation">
         <a href="#features">Features</a>
-        <a href="#analytics">Analytics</a>
+        <a href="#screenshots">Screenshots</a>
         <a href="#privacy">Privacy</a>
-        <a href="#contact">Contact</a>
         <a href="#download" class="btn btn-primary btn-sm">Download</a>
       </nav>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero">
+    <section id="top" class="hero">
+      <div class="bg-blur"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
           <div class="badge">New • iPhone & iPad</div>
           <h1>Your daily companion for balanced wellbeing</h1>
-          <p>Track your mood and sleep, log stress events, and connect Apple&nbsp;Health data for steps, heart rate, and activity. ZenSync brings it all together with clear analytics and AI-powered insights.</p>
+          <p>Track mood, sleep, stress, and Apple&nbsp;Health data. Get date‑range analytics and AI insights — all with privacy by design.</p>
           <div class="cta" id="download">
             <a class="btn btn-primary" href="#" aria-disabled="true">App Store (coming soon)</a>
             <a class="btn btn-ghost" href="mailto:support@zensync.life?subject=TestFlight%20Access">Request TestFlight</a>
           </div>
-          <ul class="hero-points">
-            <li>Private by design – on-device storage</li>
-            <li>Smart goals tailored to your habits</li>
-            <li>Inclusive date-range analytics</li>
-          </ul>
+          <div class="chips">
+            <span>On‑device privacy</span>
+            <span>Adaptive iPad layouts</span>
+            <span>AI insights</span>
+          </div>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="phone-mock">
@@ -78,32 +78,32 @@
       <div class="container">
         <h2 class="section-title">Everything you need to build healthy habits</h2>
         <div class="grid features-grid">
-          <article class="feature">
+          <article class="feature glass">
             <div class="feature-icon">😊</div>
             <h3>Mood Tracking</h3>
             <p>Check in up to four times a day to map your emotional rhythm and identify patterns.</p>
           </article>
-          <article class="feature">
+          <article class="feature glass">
             <div class="feature-icon">😴</div>
             <h3>Sleep Quality</h3>
-            <p>Log hours, time-to-sleep, and overall quality; merge with Apple&nbsp;Watch sleep data.</p>
+            <p>Log hours, time‑to‑sleep, and overall quality; merge with Apple&nbsp;Watch sleep data.</p>
           </article>
-          <article class="feature">
+          <article class="feature glass">
             <div class="feature-icon">📊</div>
             <h3>Trends & Insights</h3>
-            <p>Explore date-range analytics across mood, sleep, steps, and calories with AI highlights.</p>
+            <p>Explore analytics across mood, sleep, steps, and calories with AI highlights.</p>
           </article>
-          <article class="feature">
+          <article class="feature glass">
             <div class="feature-icon">🎯</div>
             <h3>Personalized Goals</h3>
             <p>Daily, adaptive goals based on your recent behavior and preferences.</p>
           </article>
-          <article class="feature">
+          <article class="feature glass">
             <div class="feature-icon">🧠</div>
             <h3>Stress Manager</h3>
-            <p>Track upcoming events and receive practical, health-first suggestions.</p>
+            <p>Track upcoming events and receive practical, health‑first suggestions.</p>
           </article>
-          <article class="feature">
+          <article class="feature glass">
             <div class="feature-icon">🔒</div>
             <h3>Privacy First</h3>
             <p>Your data stays on your device, with clear controls to export or delete.</p>
@@ -112,22 +112,30 @@
       </div>
     </section>
 
-    <section id="analytics" class="section section-alt">
-      <div class="container analytics">
-        <div class="analytics-copy">
-          <h2 class="section-title">Designed for iPhone and iPad</h2>
-          <p>Adaptive layouts with full‑width iPad experiences and intuitive navigation on iPhone. Every chart respects your selected date range, and sleep charts merge manual and Apple&nbsp;Watch data.</p>
-          <ul class="list">
-            <li>Inclusive date-range handling</li>
-            <li>Weekly and daily views</li>
-            <li>Clear visual states for missing data</li>
-          </ul>
-        </div>
-        <div class="analytics-art" aria-hidden="true">
-          <div class="screen-card">Dashboard</div>
-          <div class="screen-card">Goals</div>
-          <div class="screen-card">Analytics</div>
-          <div class="screen-card">Insights</div>
+    <section id="screenshots" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">App Screenshots</h2>
+        <p class="section-sub">Tap to open full-size.</p>
+        <div class="carousel">
+          <button class="car-btn prev" aria-label="Previous screenshot">‹</button>
+          <div class="car-track" role="region" aria-label="ZenSync screenshots">
+            <a class="car-slide" href="assets/screen-home.jpg" target="_blank" rel="noopener">
+              <img src="assets/screen-home.jpg" alt="Home dashboard" loading="lazy" />
+            </a>
+            <a class="car-slide" href="assets/screen-goals.jpg" target="_blank" rel="noopener">
+              <img src="assets/screen-goals.jpg" alt="Daily Goals" loading="lazy" />
+            </a>
+            <a class="car-slide" href="assets/screen-analytics1.jpg" target="_blank" rel="noopener">
+              <img src="assets/screen-analytics1.jpg" alt="Analytics Overview" loading="lazy" />
+            </a>
+            <a class="car-slide" href="assets/screen-analytics2.jpg" target="_blank" rel="noopener">
+              <img src="assets/screen-analytics2.jpg" alt="AI Trends table" loading="lazy" />
+            </a>
+            <a class="car-slide" href="assets/screen-stress.jpg" target="_blank" rel="noopener">
+              <img src="assets/screen-stress.jpg" alt="Stress Management" loading="lazy" />
+            </a>
+          </div>
+          <button class="car-btn next" aria-label="Next screenshot">›</button>
         </div>
       </div>
     </section>
@@ -159,6 +167,11 @@
     </section>
   </main>
 
+  <div class="floating-cta">
+    <a class="btn btn-primary" href="#" aria-disabled="true">App Store (soon)</a>
+    <a class="btn btn-ghost" href="mailto:support@zensync.life?subject=TestFlight%20Access">Request TestFlight</a>
+  </div>
+
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <span>© <span id="year"></span> ZenSync</span>
@@ -173,6 +186,10 @@
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll
+    document.documentElement.style.scrollBehavior = 'smooth';
+
     // Mobile nav toggle
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.getElementById('primary-nav');
@@ -182,6 +199,22 @@
       nav.classList.toggle('open');
       document.body.classList.toggle('nav-open');
     });
+
+    // Simple carousel
+    const track = document.querySelector('.car-track');
+    const slides = Array.from(document.querySelectorAll('.car-slide'));
+    const prev = document.querySelector('.car-btn.prev');
+    const next = document.querySelector('.car-btn.next');
+    let index = 0;
+    function updateCarousel() {
+      const w = slides[0]?.getBoundingClientRect().width || 300;
+      track.style.transform = `translateX(${-index * (w + 16)}px)`; // 16px gap
+    }
+    function snapResize() { requestAnimationFrame(updateCarousel); }
+    prev.addEventListener('click', () => { index = Math.max(0, index - 1); updateCarousel(); });
+    next.addEventListener('click', () => { index = Math.min(slides.length - 1, index + 1); updateCarousel(); });
+    window.addEventListener('resize', snapResize);
+    updateCarousel();
   </script>
 </body>
 </html> 
