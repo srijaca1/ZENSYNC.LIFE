@@ -35,14 +35,21 @@ img { max-width: 100%; display: block; }
 .btn-ghost { color: var(--brand); background: color-mix(in oklab, var(--brand) 14%, transparent); border: 1px solid color-mix(in oklab, var(--brand) 30%, transparent); }
 .btn-ghost:hover { background: color-mix(in oklab, var(--brand) 18%, transparent); }
 
-.site-header { position: sticky; top: 0; background: color-mix(in oklab, var(--panel) 72%, transparent); backdrop-filter: blur(14px) saturate(1.2); border-bottom: 1px solid var(--line); z-index: 50; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-.brand-icon { width: 36px; height: 36px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
-.brand-title { font-size: clamp(22px, 2.2vw, 28px); font-weight: 800; line-height: 1.2; display: block; }
-.brand-sub { font-size: clamp(12px, 1.4vw, 14px); font-weight: 600; color: var(--muted); display: block; }
-.nav { display: flex; gap: 14px; align-items: center; }
-.nav a { color: inherit; text-decoration: none; font-weight: 600; font-size: 14px; padding: 8px 10px; border-radius: 8px; }
+.site-header { position: sticky; top: 0; border-bottom: 1px solid var(--line); z-index: 50; overflow: hidden; background: linear-gradient(90deg,
+  color-mix(in oklab, var(--brand-1) 18%, var(--panel)),
+  color-mix(in oklab, var(--brand-2) 18%, var(--panel))
+); backdrop-filter: blur(14px) saturate(1.2); }
+.site-header::before { content: ""; position: absolute; inset: -40% -40% auto -40%; height: 180%; background:
+  radial-gradient(40% 40% at 15% 40%, color-mix(in oklab, var(--brand-2) 28%, transparent), transparent 60%),
+  radial-gradient(30% 30% at 80% 20%, color-mix(in oklab, var(--brand-1) 24%, transparent), transparent 60%);
+filter: blur(40px); pointer-events: none; opacity: .6; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; gap: 14px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; }
+.brand-icon { width: 56px; height: 56px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.brand-title { font-size: clamp(28px, 2.8vw, 36px); font-weight: 900; line-height: 1.1; display: block; }
+.brand-sub { font-size: clamp(14px, 1.6vw, 16px); font-weight: 700; color: var(--muted); display: block; }
+.nav { display: flex; gap: 16px; align-items: center; }
+.nav a { color: inherit; text-decoration: none; font-weight: 700; font-size: 15px; padding: 10px 12px; border-radius: 10px; }
 .nav a:hover { background: color-mix(in oklab, var(--text) 8%, transparent); }
 .menu-toggle { display: none; background: none; border: none; padding: 6px; border-radius: 8px; }
 .menu-toggle .menu-bar { display: block; width: 22px; height: 2px; background: var(--text); margin: 4px 0; border-radius: 1px; }
@@ -163,6 +170,9 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 560px) {
   .features-grid { grid-template-columns: 1fr; }
-  .header-inner { flex-wrap: wrap; gap: 12px; }
+  .header-inner { flex-wrap: wrap; gap: 12px; padding: 14px 0; }
+  .brand-icon { width: 44px; height: 44px; }
+  .brand-title { font-size: clamp(22px, 6vw, 28px); }
+  .brand-sub { font-size: clamp(12px, 3.6vw, 14px); }
   .floating-cta { left: 12px; right: 12px; transform: none; }
 } 
