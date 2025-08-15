@@ -36,7 +36,6 @@
       <nav id="primary-nav" class="nav" role="navigation">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
-        <a href="#video">Video</a>
         <a href="privacy.html">Privacy</a>
         <a href="#download" class="btn btn-primary btn-sm">Download</a>
       </nav>
@@ -217,63 +216,7 @@
       </div>
     </section>
 
-    <section id="video" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Hear ZenSync in Action</h2>
-        <p class="section-subtitle">Listen to how ZenSync helps you track and improve your wellness</p>
-        
-        <div class="video-container">
-          <div class="video-wrapper">
-            <div class="audio-player">
-              <div class="audio-visualizer">
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-              </div>
-              <audio 
-                id="zensync-audio" 
-                controls 
-                preload="metadata"
-                class="feature-audio">
-                <source src="assets/ElevenLabs_2025-08-15T01_33_15_Rachel_pre_sp94_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
-                <source src="assets/ElevenLabs_2025-08-15T01_30_08_Rachel_pre_sp94_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
-                <p>Your browser doesn't support audio playback. <a href="assets/ElevenLabs_2025-08-15T01_33_15_Rachel_pre_sp94_s50_sb75_se0_b_m2.mp3">Download the audio</a> to listen.</p>
-              </audio>
-            </div>
-            
-            <div class="video-overlay">
-              <button class="play-btn" id="play-video" aria-label="Play ZenSync video">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="5,3 19,12 5,21"></polygon>
-                </svg>
-              </button>
-            </div>
-          </div>
-          
-          <div class="video-info">
-            <h3>ZenSync App Overview</h3>
-            <p>Discover how ZenSync combines mood tracking, sleep monitoring, and AI insights to help you achieve better wellness. Your data stays private and secure on your device.</p>
-            
-            <div class="video-features">
-              <div class="video-feature">
-                <span class="feature-icon">🎯</span>
-                <span>Daily wellness tracking</span>
-              </div>
-              <div class="video-feature">
-                <span class="feature-icon">🧠</span>
-                <span>AI-powered insights</span>
-              </div>
-              <div class="video-feature">
-                <span class="feature-icon">🔒</span>
-                <span>Privacy by design</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Removed inline privacy section; now a dedicated page at privacy.html -->
 
@@ -431,34 +374,7 @@
       });
     }
     
-    // Audio functionality
-    const audio = document.getElementById('zensync-audio');
-    const playBtn = document.getElementById('play-video');
-    const videoOverlay = document.querySelector('.video-overlay');
-    const visualizer = document.querySelector('.audio-visualizer');
-    
-    if (playBtn && audio) {
-      playBtn.addEventListener('click', () => {
-        audio.play();
-        videoOverlay.style.display = 'none';
-        visualizer.style.animationPlayState = 'running';
-      });
-      
-      audio.addEventListener('play', () => {
-        videoOverlay.style.display = 'none';
-        visualizer.style.animationPlayState = 'running';
-      });
-      
-      audio.addEventListener('pause', () => {
-        videoOverlay.style.display = 'flex';
-        visualizer.style.animationPlayState = 'paused';
-      });
-      
-      audio.addEventListener('ended', () => {
-        videoOverlay.style.display = 'flex';
-        visualizer.style.animationPlayState = 'paused';
-      });
-    }
+
   </script>
 </body>
 </html> 
