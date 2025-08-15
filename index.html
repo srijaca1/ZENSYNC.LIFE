@@ -206,21 +206,29 @@
 
     <section id="video" class="section section-alt">
       <div class="container">
-        <h2 class="section-title">See ZenSync in Motion</h2>
-        <p class="section-subtitle">Watch how ZenSync helps you track and improve your wellness</p>
+        <h2 class="section-title">Hear ZenSync in Action</h2>
+        <p class="section-subtitle">Listen to how ZenSync helps you track and improve your wellness</p>
         
         <div class="video-container">
           <div class="video-wrapper">
-            <video 
-              id="zensync-video" 
-              controls 
-              preload="metadata"
-              poster="assets/app-icon.png"
-              class="feature-video">
-              <source src="assets/zensync-video.mp4" type="video/mp4">
-              <source src="assets/zensync-video.webm" type="video/webm">
-              <p>Your browser doesn't support video playback. <a href="assets/zensync-video.mp4">Download the video</a> to watch it.</p>
-            </video>
+            <div class="audio-player">
+              <div class="audio-visualizer">
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+              </div>
+              <audio 
+                id="zensync-audio" 
+                controls 
+                preload="metadata"
+                class="feature-audio">
+                <source src="assets/ElevenLabs_2025-08-15T01_33_15_Rachel_pre_sp94_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
+                <source src="assets/ElevenLabs_2025-08-15T01_30_08_Rachel_pre_sp94_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
+                <p>Your browser doesn't support audio playback. <a href="assets/ElevenLabs_2025-08-15T01_33_15_Rachel_pre_sp94_s50_sb75_se0_b_m2.mp3">Download the audio</a> to listen.</p>
+              </audio>
+            </div>
             
             <div class="video-overlay">
               <button class="play-btn" id="play-video" aria-label="Play ZenSync video">
@@ -359,27 +367,32 @@
     window.addEventListener('resize', () => requestAnimationFrame(updateScreenshotsCarousel));
     updateScreenshotsCarousel();
     
-    // Video functionality
-    const video = document.getElementById('zensync-video');
+    // Audio functionality
+    const audio = document.getElementById('zensync-audio');
     const playBtn = document.getElementById('play-video');
     const videoOverlay = document.querySelector('.video-overlay');
+    const visualizer = document.querySelector('.audio-visualizer');
     
-    if (playBtn && video) {
+    if (playBtn && audio) {
       playBtn.addEventListener('click', () => {
-        video.play();
+        audio.play();
         videoOverlay.style.display = 'none';
+        visualizer.style.animationPlayState = 'running';
       });
       
-      video.addEventListener('play', () => {
+      audio.addEventListener('play', () => {
         videoOverlay.style.display = 'none';
+        visualizer.style.animationPlayState = 'running';
       });
       
-      video.addEventListener('pause', () => {
+      audio.addEventListener('pause', () => {
         videoOverlay.style.display = 'flex';
+        visualizer.style.animationPlayState = 'paused';
       });
       
-      video.addEventListener('ended', () => {
+      audio.addEventListener('ended', () => {
         videoOverlay.style.display = 'flex';
+        visualizer.style.animationPlayState = 'paused';
       });
     }
   </script>
