@@ -374,6 +374,54 @@ filter: blur(40px); pointer-events: none; opacity: .6; }
   }
 }
 
+/* Screenshots with Audio */
+.screenshots-with-audio {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.audio-controls {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.audio-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.audio-play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
+}
+
+.audio-play-btn.playing {
+  background: #10b981;
+}
+
+.audio-play-btn.playing svg {
+  display: none;
+}
+
+.audio-play-btn.playing::after {
+  content: "⏸";
+  font-size: 16px;
+}
+
+#screenshots-audio {
+  display: none;
+}
+
 /* Video Section */
 .video-container {
   display: grid;

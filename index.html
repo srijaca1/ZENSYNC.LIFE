@@ -118,7 +118,20 @@
         <h2 class="section-title">See ZenSync in action</h2>
         <p class="section-subtitle">Beautiful, intuitive design that adapts to your lifestyle</p>
         
-        <div class="screenshots-carousel">
+        <div class="screenshots-with-audio">
+          <div class="audio-controls">
+            <button class="audio-play-btn" id="screenshots-audio-play">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5,3 19,12 5,21"></polygon>
+              </svg>
+              <span>Play Narration</span>
+            </button>
+            <audio id="screenshots-audio" preload="metadata">
+              <source src="assets/ElevenLabs_2025-08-15T01_33_15_Rachel_pre_sp94_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          
+          <div class="screenshots-carousel">
           <div class="carousel-track">
             <div class="screenshot-slide">
               <div class="phone-frame">
@@ -366,6 +379,57 @@
     // Initialize carousel
     window.addEventListener('resize', () => requestAnimationFrame(updateScreenshotsCarousel));
     updateScreenshotsCarousel();
+    
+    // Screenshots audio sync
+    const screenshotsAudio = document.getElementById('screenshots-audio');
+    const audioPlayBtn = document.getElementById('screenshots-audio-play');
+    
+    if (audioPlayBtn && screenshotsAudio) {
+      let isPlaying = false;
+      
+      audioPlayBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          screenshotsAudio.pause();
+          audioPlayBtn.classList.remove('playing');
+          audioPlayBtn.innerHTML = `
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5,3 19,12 5,21"></polygon>
+            </svg>
+            <span>Play Narration</span>
+          `;
+          isPlaying = false;
+        } else {
+          screenshotsAudio.play();
+          audioPlayBtn.classList.add('playing');
+          audioPlayBtn.innerHTML = `<span>Pause Narration</span>`;
+          isPlaying = true;
+        }
+      });
+      
+      screenshotsAudio.addEventListener('ended', () => {
+        audioPlayBtn.classList.remove('playing');
+        audioPlayBtn.innerHTML = `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5,3 19,12 5,21"></polygon>
+          </svg>
+          <span>Play Narration</span>
+        `;
+        isPlaying = false;
+      });
+      
+      // Sync carousel with audio timing
+      screenshotsAudio.addEventListener('timeupdate', () => {
+        const duration = screenshotsAudio.duration;
+        const currentTime = screenshotsAudio.currentTime;
+        const progress = currentTime / duration;
+        
+        // Auto-advance carousel based on audio progress
+        const targetSlide = Math.floor(progress * carouselSlides.length);
+        if (targetSlide !== carouselIndex && targetSlide < carouselSlides.length) {
+          goToSlide(targetSlide);
+        }
+      });
+    }
     
     // Audio functionality
     const audio = document.getElementById('zensync-audio');
