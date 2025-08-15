@@ -36,6 +36,7 @@
       <nav id="primary-nav" class="nav" role="navigation">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
+        <a href="#video">Video</a>
         <a href="privacy.html">Privacy</a>
         <a href="#download" class="btn btn-primary btn-sm">Download</a>
       </nav>
@@ -203,6 +204,56 @@
       </div>
     </section>
 
+    <section id="video" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">See ZenSync in Motion</h2>
+        <p class="section-subtitle">Watch how ZenSync helps you track and improve your wellness</p>
+        
+        <div class="video-container">
+          <div class="video-wrapper">
+            <video 
+              id="zensync-video" 
+              controls 
+              preload="metadata"
+              poster="assets/app-icon.png"
+              class="feature-video">
+              <source src="assets/zensync-video.mp4" type="video/mp4">
+              <source src="assets/zensync-video.webm" type="video/webm">
+              <p>Your browser doesn't support video playback. <a href="assets/zensync-video.mp4">Download the video</a> to watch it.</p>
+            </video>
+            
+            <div class="video-overlay">
+              <button class="play-btn" id="play-video" aria-label="Play ZenSync video">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="video-info">
+            <h3>ZenSync App Overview</h3>
+            <p>Discover how ZenSync combines mood tracking, sleep monitoring, and AI insights to help you achieve better wellness. Your data stays private and secure on your device.</p>
+            
+            <div class="video-features">
+              <div class="video-feature">
+                <span class="feature-icon">🎯</span>
+                <span>Daily wellness tracking</span>
+              </div>
+              <div class="video-feature">
+                <span class="feature-icon">🧠</span>
+                <span>AI-powered insights</span>
+              </div>
+              <div class="video-feature">
+                <span class="feature-icon">🔒</span>
+                <span>Privacy by design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Removed inline privacy section; now a dedicated page at privacy.html -->
 
     <section class="section cta-final" id="contact">
@@ -307,6 +358,30 @@
     // Initialize carousel
     window.addEventListener('resize', () => requestAnimationFrame(updateScreenshotsCarousel));
     updateScreenshotsCarousel();
+    
+    // Video functionality
+    const video = document.getElementById('zensync-video');
+    const playBtn = document.getElementById('play-video');
+    const videoOverlay = document.querySelector('.video-overlay');
+    
+    if (playBtn && video) {
+      playBtn.addEventListener('click', () => {
+        video.play();
+        videoOverlay.style.display = 'none';
+      });
+      
+      video.addEventListener('play', () => {
+        videoOverlay.style.display = 'none';
+      });
+      
+      video.addEventListener('pause', () => {
+        videoOverlay.style.display = 'flex';
+      });
+      
+      video.addEventListener('ended', () => {
+        videoOverlay.style.display = 'flex';
+      });
+    }
   </script>
 </body>
 </html> 

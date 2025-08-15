@@ -372,4 +372,154 @@ filter: blur(40px); pointer-events: none; opacity: .6; }
   .carousel-dots {
     margin-top: 20px;
   }
+}
+
+/* Video Section */
+.video-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.feature-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.video-wrapper:hover .video-overlay {
+  opacity: 1;
+}
+
+.play-btn {
+  background: var(--brand);
+  color: white;
+  border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(14, 165, 233, 0.5);
+}
+
+.play-btn svg {
+  margin-left: 4px;
+}
+
+.video-info h3 {
+  font-size: 24px;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.video-info p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.video-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.video-feature .feature-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+/* Mobile responsive for video */
+@media (max-width: 768px) {
+  .video-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .video-info h3 {
+    font-size: 20px;
+  }
+  
+  .video-info p {
+    font-size: 15px;
+  }
+  
+  .play-btn {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .play-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    gap: 20px;
+  }
+  
+  .video-info h3 {
+    font-size: 18px;
+  }
+  
+  .video-info p {
+    font-size: 14px;
+  }
+  
+  .video-features {
+    gap: 10px;
+  }
+  
+  .video-feature {
+    font-size: 13px;
+  }
 } 
