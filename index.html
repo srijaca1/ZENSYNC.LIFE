@@ -35,6 +35,7 @@
       </button>
       <nav id="primary-nav" class="nav" role="navigation">
         <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
         <a href="privacy.html">Privacy</a>
         <a href="#download" class="btn btn-primary btn-sm">Download</a>
       </nav>
@@ -111,6 +112,97 @@
       </div>
     </section>
 
+    <section id="screenshots" class="section">
+      <div class="container">
+        <h2 class="section-title">See ZenSync in action</h2>
+        <p class="section-subtitle">Beautiful, intuitive design that adapts to your lifestyle</p>
+        
+        <div class="screenshots-carousel">
+          <div class="carousel-track">
+            <div class="screenshot-slide">
+              <div class="phone-frame">
+                <img src="assets/screenshot-dashboard.png" alt="ZenSync Dashboard - Main app screen showing daily overview" />
+                <div class="screenshot-overlay">
+                  <h3>Dashboard</h3>
+                  <p>Your daily wellness overview at a glance</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="screenshot-slide">
+              <div class="phone-frame">
+                <img src="assets/screenshot-mood.png" alt="ZenSync Mood Tracking - Track your mood throughout the day" />
+                <div class="screenshot-overlay">
+                  <h3>Mood Tracking</h3>
+                  <p>Log your mood up to four times daily</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="screenshot-slide">
+              <div class="phone-frame">
+                <img src="assets/screenshot-sleep.png" alt="ZenSync Sleep Tracking - Monitor sleep quality and patterns" />
+                <div class="screenshot-overlay">
+                  <h3>Sleep Quality</h3>
+                  <p>Track sleep hours and quality metrics</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="screenshot-slide">
+              <div class="phone-frame">
+                <img src="assets/screenshot-insights.png" alt="ZenSync AI Insights - AI-powered analytics and trends" />
+                <div class="screenshot-overlay">
+                  <h3>AI Insights</h3>
+                  <p>Discover patterns with intelligent analytics</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="screenshot-slide">
+              <div class="phone-frame">
+                <img src="assets/screenshot-health.png" alt="ZenSync Health Integration - Apple Health data sync" />
+                <div class="screenshot-overlay">
+                  <h3>Health Sync</h3>
+                  <p>Seamless Apple Health integration</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="screenshot-slide">
+              <div class="phone-frame">
+                <img src="assets/screenshot-privacy.png" alt="ZenSync Privacy Settings - Your data stays on your device" />
+                <div class="screenshot-overlay">
+                  <h3>Privacy First</h3>
+                  <p>Complete control over your data</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="carousel-btn prev" aria-label="Previous screenshot">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="carousel-btn next" aria-label="Next screenshot">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+          
+          <div class="carousel-dots">
+            <button class="dot active" data-slide="0" aria-label="Go to screenshot 1"></button>
+            <button class="dot" data-slide="1" aria-label="Go to screenshot 2"></button>
+            <button class="dot" data-slide="2" aria-label="Go to screenshot 3"></button>
+            <button class="dot" data-slide="3" aria-label="Go to screenshot 4"></button>
+            <button class="dot" data-slide="4" aria-label="Go to screenshot 5"></button>
+            <button class="dot" data-slide="5" aria-label="Go to screenshot 6"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Removed inline privacy section; now a dedicated page at privacy.html -->
 
     <section class="section cta-final" id="contact">
@@ -154,21 +246,67 @@
       document.body.classList.toggle('nav-open');
     });
 
-    // Simple carousel
-    const track = document.querySelector('.car-track');
-    const slides = Array.from(document.querySelectorAll('.car-slide'));
-    const prev = document.querySelector('.car-btn.prev');
-    const next = document.querySelector('.car-btn.next');
-    let index = 0;
-    function updateCarousel() {
-      const w = slides[0]?.getBoundingClientRect().width || 300;
-      track.style.transform = `translateX(${-index * (w + 16)}px)`; // 16px gap
+    // Screenshots carousel
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselSlides = Array.from(document.querySelectorAll('.screenshot-slide'));
+    const carouselPrev = document.querySelector('.carousel-btn.prev');
+    const carouselNext = document.querySelector('.carousel-btn.next');
+    const carouselDots = Array.from(document.querySelectorAll('.dot'));
+    let carouselIndex = 0;
+    
+    function updateScreenshotsCarousel() {
+      const slideWidth = carouselSlides[0]?.getBoundingClientRect().width || 300;
+      const gap = 20; // gap between slides
+      carouselTrack.style.transform = `translateX(${-carouselIndex * (slideWidth + gap)}px)`;
+      
+      // Update dots
+      carouselDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === carouselIndex);
+      });
+      
+      // Update button states
+      carouselPrev.disabled = carouselIndex === 0;
+      carouselNext.disabled = carouselIndex === carouselSlides.length - 1;
     }
-    function snapResize() { requestAnimationFrame(updateCarousel); }
-    prev.addEventListener('click', () => { index = Math.max(0, index - 1); updateCarousel(); });
-    next.addEventListener('click', () => { index = Math.min(slides.length - 1, index + 1); updateCarousel(); });
-    window.addEventListener('resize', snapResize);
-    updateCarousel();
+    
+    function goToSlide(index) {
+      carouselIndex = Math.max(0, Math.min(index, carouselSlides.length - 1));
+      updateScreenshotsCarousel();
+    }
+    
+    // Event listeners
+    carouselPrev?.addEventListener('click', () => goToSlide(carouselIndex - 1));
+    carouselNext?.addEventListener('click', () => goToSlide(carouselIndex + 1));
+    
+    carouselDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => goToSlide(i));
+    });
+    
+    // Auto-advance carousel
+    let carouselInterval = setInterval(() => {
+      if (carouselIndex < carouselSlides.length - 1) {
+        goToSlide(carouselIndex + 1);
+      } else {
+        goToSlide(0);
+      }
+    }, 4000);
+    
+    // Pause auto-advance on hover
+    const carousel = document.querySelector('.screenshots-carousel');
+    carousel?.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+    carousel?.addEventListener('mouseleave', () => {
+      carouselInterval = setInterval(() => {
+        if (carouselIndex < carouselSlides.length - 1) {
+          goToSlide(carouselIndex + 1);
+        } else {
+          goToSlide(0);
+        }
+      }, 4000);
+    });
+    
+    // Initialize carousel
+    window.addEventListener('resize', () => requestAnimationFrame(updateScreenshotsCarousel));
+    updateScreenshotsCarousel();
   </script>
 </body>
 </html> 
