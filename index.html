@@ -323,33 +323,45 @@
     window.addEventListener('resize', () => requestAnimationFrame(updateScreenshotsCarousel));
     updateScreenshotsCarousel();
     
-    // Screenshots audio sync
+    // Screenshots audio sync with auto-play
     const screenshotsAudio = document.getElementById('screenshots-audio');
     const audioPlayBtn = document.getElementById('screenshots-audio-play');
     
     if (audioPlayBtn && screenshotsAudio) {
       let isPlaying = false;
       
-      audioPlayBtn.addEventListener('click', () => {
-        if (isPlaying) {
-          screenshotsAudio.pause();
-          audioPlayBtn.classList.remove('playing');
-          audioPlayBtn.innerHTML = `
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="5,3 19,12 5,21"></polygon>
-            </svg>
-            <span>Play Narration</span>
-          `;
-          isPlaying = false;
-        } else {
-          screenshotsAudio.play();
+      // Auto-play when section comes into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !isPlaying) {
+            // Small delay to ensure user is ready
+            setTimeout(() => {
+              startAudio();
+            }, 1000);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      const screenshotsSection = document.getElementById('screenshots');
+      if (screenshotsSection) {
+        observer.observe(screenshotsSection);
+      }
+      
+      function startAudio() {
+        screenshotsAudio.play().then(() => {
+          isPlaying = true;
           audioPlayBtn.classList.add('playing');
           audioPlayBtn.innerHTML = `<span>Pause Narration</span>`;
-          isPlaying = true;
-        }
-      });
+        }).catch(error => {
+          console.log('Auto-play prevented:', error);
+          // Fallback to manual play
+        });
+      }
       
-      screenshotsAudio.addEventListener('ended', () => {
+      function stopAudio() {
+        screenshotsAudio.pause();
+        isPlaying = false;
         audioPlayBtn.classList.remove('playing');
         audioPlayBtn.innerHTML = `
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -357,7 +369,20 @@
           </svg>
           <span>Play Narration</span>
         `;
-        isPlaying = false;
+      }
+      
+      audioPlayBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          stopAudio();
+        } else {
+          startAudio();
+        }
+      });
+      
+      screenshotsAudio.addEventListener('ended', () => {
+        stopAudio();
+        // Reset to first slide
+        goToSlide(0);
       });
       
       // Sync carousel with audio timing
