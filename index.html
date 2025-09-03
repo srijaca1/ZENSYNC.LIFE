@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>ZenSync – Wellness: Mind & Body Sync</title>
-  <meta name="description" content="ZenSync helps you track mood, sleep, stress, and activity, with AI insights to improve your wellbeing." />
+  <meta name="description" content="ZenSync helps you track mood, sleep, stress, and activity to improve your wellbeing." />
   <meta name="theme-color" content="#0ea5e9" />
   <meta property="og:title" content="ZenSync – Wellness: Mind & Body Sync" />
-  <meta property="og:description" content="Track mood, sleep, stress, and activity. Get AI insights to improve your wellbeing." />
+  <meta property="og:description" content="Track mood, sleep, stress, and activity to improve your wellbeing." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/app-icon.png" />
   <link rel="icon" href="assets/app-icon.png" />
@@ -49,7 +50,7 @@
         <div class="hero-copy">
           <div class="badge">New • iPhone & iPad</div>
           <h1>Your daily companion for balanced wellbeing</h1>
-          <p>Track mood, sleep, stress, and Apple&nbsp;Health data. Get date‑range analytics and AI insights — all with privacy by design.</p>
+          <p>Track mood, sleep, stress, and Apple&nbsp;Health data. Get date‑range analytics and insights — all with privacy by design.</p>
           <div class="cta" id="download">
             <a class="btn btn-primary" href="#" aria-disabled="true">App Store (coming soon)</a>
             
@@ -57,7 +58,7 @@
           <div class="chips">
             <span>On‑device privacy</span>
             <span>Adaptive iPad layouts</span>
-            <span>AI insights</span>
+            <span>Smart insights</span>
           </div>
         </div>
         <div class="hero-art" aria-hidden="true">
@@ -67,7 +68,7 @@
               <div class="stat"><span>Sleep</span><strong>7.2 h</strong></div>
               <div class="stat"><span>Steps</span><strong>8,945</strong></div>
             </div>
-            <div class="insight">AI Insight: Active day boosted sleep quality</div>
+            <div class="insight">Smart Insight: Active day boosted sleep quality</div>
           </div>
         </div>
       </div>
@@ -91,7 +92,7 @@
           <article class="feature glass">
             <div class="feature-icon">📊</div>
             <h3>Trends & Insights</h3>
-            <p>Explore analytics across mood, sleep, steps, and calories with AI highlights.</p>
+            <p>Explore analytics across mood, sleep, steps, and calories with smart highlights.</p>
           </article>
           <article class="feature glass">
             <div class="feature-icon">🎯</div>
@@ -164,9 +165,9 @@
             
             <div class="screenshot-slide">
               <div class="phone-frame">
-                <img src="assets/screenshot-insights.jpg" alt="ZenSync AI Insights - AI-powered analytics and trends" />
+                <img src="assets/screenshot-insights.jpg" alt="ZenSync Insights - Smart analytics and trends" />
                 <div class="screenshot-overlay">
-                  <h3>AI Insights</h3>
+                  <h3>Smart Insights</h3>
                   <p>Discover patterns with intelligent analytics</p>
                 </div>
               </div>
@@ -245,6 +246,11 @@
   </footer>
 
   <script>
+    // Force HTTPS
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+      location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }
+    
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
