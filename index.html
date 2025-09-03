@@ -246,9 +246,9 @@
   </footer>
 
   <script>
-    // Force HTTPS
+    // Force HTTPS - More aggressive redirect
     if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
-      location.replace(`https:${location.href.substring(location.protocol.length)}`);
+      window.location.href = 'https://' + location.hostname + location.pathname + location.search + location.hash;
     }
     
     // Year
