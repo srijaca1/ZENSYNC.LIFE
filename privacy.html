@@ -11,6 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Force HTTPS - More aggressive redirect
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+      window.location.href = 'https://' + location.hostname + location.pathname + location.search + location.hash;
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,6 +36,7 @@
       </button>
       <nav id="primary-nav" class="nav" role="navigation">
         <a href="index.html#features">Features</a>
+        <a href="#disclaimer">Disclaimer</a>
         <a href="privacy.html" aria-current="page">Privacy</a>
         <a href="index.html#download" class="btn btn-primary btn-sm">Download</a>
       </nav>
@@ -92,12 +99,40 @@
         <p>Email: <a href="mailto:support@zensync.life">support@zensync.life</a></p>
       </div>
     </section>
+
+    <!-- Medical Disclaimer Section -->
+    <section class="section disclaimer-section" id="disclaimer">
+      <div class="container">
+        <div class="disclaimer-content glass">
+          <div class="disclaimer-header">
+            <div class="disclaimer-icon">⚠️</div>
+            <h2>Medical Disclaimer</h2>
+          </div>
+          <div class="disclaimer-text">
+            <p><strong>Important:</strong> This app is for general wellness tracking and shows general goals and tips.</p>
+            <ul>
+              <li>It's important to consult healthcare professionals for any health support and advice.</li>
+              <li>Do not make medical decisions based solely on this app's data.</li>
+              <li>Seek immediate medical attention for any health concerns.</li>
+              <li>This app is not a substitute for professional medical care.</li>
+            </ul>
+            <p class="disclaimer-note">ZenSync is designed to complement your wellness journey, not replace professional medical guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> ZenSync</span>
+      <div class="footer-left">
+        <span>© <span id="year"></span> ZenSync</span>
+        <div class="footer-disclaimer">
+          <small>⚠️ For general wellness tracking only. Consult healthcare professionals for medical advice.</small>
+        </div>
+      </div>
       <nav class="footer-nav">
+        <a href="#disclaimer">Disclaimer</a>
         <a href="privacy.html" aria-current="page">Privacy</a>
       </nav>
     </div>
